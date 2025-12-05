@@ -1,1 +1,7 @@
-
+streamlit>=1.36.0
+pandas>=1.5
+plotly>=5.0
+mysql-connector-python>=8.0
+bcrypt>=4.0
+python-dotenv>=1.0
+openpyxl>=3.0
