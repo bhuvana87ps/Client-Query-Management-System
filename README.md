@@ -153,9 +153,9 @@ The Support Dashboard is designed for operational workflow management and analyt
 ---
 
 ### Query Lifecycle
-
+'''
 Open → In Progress → Closed
-
+'''
 Support workflow:
 - Pick queries from Open Queue
 - Work on assigned queries
@@ -301,3 +301,4 @@ streamlit run src/app.py
 - Bhuvana PS
 - Website Developer / SEO Specialist / Digital Marketing advisor
 - Domain: Data Engineering / Data Analytics / Python
+
