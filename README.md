@@ -1,348 +1,303 @@
-📊 Client Query Management System (CQMS)
+# 📊 Client Query Management System (CQMS)
 
-A data-driven, role-based support management system that enables clients to submit queries in real time, support teams to manage and resolve them efficiently, and stakeholders to analyze service performance using analytics.
+A **data-driven, role-based support management system** that enables clients to submit queries in real time, support teams to manage and resolve them efficiently, and stakeholders to analyze service performance using analytics.
 
-🧩 Project Overview
+---
 
-Organizations receive a large number of support queries daily. Manual handling leads to delays, poor tracking, and low customer satisfaction.
+## 🧩 Project Overview
 
-CQMS solves this problem by providing:
+Organizations receive a large number of client support queries daily. Manual handling leads to delays, poor tracking, and low customer satisfaction.
 
-Secure login for clients and support teams
+The **Client Query Management System (CQMS)** solves this by providing:
+- Secure authentication for clients and support teams
+- Real-time query submission and lifecycle tracking
+- Support workload management
+- Analytics-driven service efficiency insights
+- Clean, validated, and analytics-ready data pipeline
 
-Real-time query submission and tracking
+---
 
-Clear query lifecycle management
+## 🎯 Project Objectives
 
-Analytics to measure service efficiency and support load
+- Organize incoming client queries
+- Track query lifecycle (Open → Closed)
+- Improve query resolution efficiency
+- Monitor support workload and trends
+- Maintain high-quality, validated data for analytics
 
-Clean, validated, and analytics-ready data pipeline
+---
 
-🎯 Objectives
+## 🏗️ System Architecture
 
-Organize incoming client queries
-
-Track query lifecycle from Open → Closed
-
-Improve support response efficiency
-
-Monitor support workload and trends
-
-Maintain clean and reliable data for analytics
-
-🏗️ System Architecture
-
-High-Level Flow
+### High-Level Flow
 
 Client / Support User
-        ↓
-    Streamlit UI
-        ↓
- Authentication Layer
-        ↓
-  Validation & Cleaning
-        ↓
-     MySQL Database
-        ↓
-   Analytics Engine
+↓
+Streamlit UI
+↓
+Authentication Layer
+↓
+Validation & Cleaning
+↓
+MySQL Database
+↓
+Analytics Engine
 
 
-📸 Screenshot: Architecture Diagram (attach here)
+📸 *(Attach Architecture Diagram Screenshot Here)*
 
-🛠️ Tech Stack
-Layer	Technology
-Language	Python
-Frontend	Streamlit
-Database	MySQL
-Data Handling	Pandas
-Security	hashlib (SHA-256)
-Validation	Regular Expressions
-Visualization	Streamlit Charts
-Version Control	Git
-🔐 Login System
-Roles Supported
+---
 
-Client
+## 🛠️ Tech Stack
 
-Support
+| Layer | Technology |
+|------|-----------|
+| Programming Language | Python |
+| Frontend | Streamlit |
+| Database | MySQL |
+| Data Processing | Pandas |
+| Security | hashlib (SHA-256) |
+| Validation | Regular Expressions |
+| Visualization | Streamlit Charts |
+| Version Control | Git |
 
-Authentication Logic
+---
 
-Database-level authentication only
+## 🔐 Login System
 
-No OTP / Email / External services
+### Roles Supported
+- **Client**
+- **Support**
 
-Passwords stored using SHA-256 hashing
+### Authentication Design
+- Database-level authentication only
+- No OTP / Email / SMS verification
+- Passwords stored using **SHA-256 hashing**
 
-Login Options
+### Login Options
+Users can authenticate using:
+- Username + Password  
+- Email + Password  
+- Mobile Number + Password  
 
-Users can log in using:
+### Security Techniques
+- `hashlib.sha256()` for password hashing
+- SQL-based credential verification
+- Role-based routing using Streamlit session state
 
-Username + Password
+📸 *(Attach Login Page Screenshot Here)*
 
-Email + Password
+---
 
-Mobile Number + Password
+## 👤 Client Dashboard
 
-Security Techniques Used
+The Client Dashboard provides a unified interface for clients to view analytics, manage their queries, and raise new issues.
 
-hashlib.sha256()
+### Tabs Included
+1. **Client Analytics**
+2. **My Queries**
+3. **New Query**
 
-SQL credential verification
+---
 
-Role-based routing using Streamlit session state
-
-📸 Screenshot: Login Page
-
-👤 Client Dashboard
-Tabs Included
-
-Client Analytics
-
-My Queries
-
-New Query
-
-1️⃣ Client Analytics
-
+### 1️⃣ Client Analytics
 Displays:
+- Total number of queries
+- Open vs Closed queries
+- Average & median resolution time
+- Queries by category
+- Queries raised over time
 
-Total queries
+📸 *(Attach Client Analytics Screenshot Here)*
 
-Open vs Closed queries
+---
 
-Average & median resolution time
-
-Query distribution by category
-
-Query trend over time
-
-📸 Screenshot: Client Analytics Tab
-
-2️⃣ My Queries
-
+### 2️⃣ My Queries
 Features:
+- View all submitted queries
+- Filter by status, category, and date
+- Status-based highlighting (Open / Closed)
+- Invalid mobile number highlighting
+- CSV export functionality
 
-View all submitted queries
+📸 *(Attach My Queries Table Screenshot Here)*
 
-Filter by status, category, date
+---
 
-Status highlighting (Open / Closed)
-
-Invalid mobile highlighting
-
-CSV export option
-
-📸 Screenshot: My Queries Table
-
-3️⃣ New Query
-
+### 3️⃣ New Query
 Clients can:
+- Select query category
+- Enter query heading and description
+- Upload issue screenshot (image)
+- Submit query in real time
 
-Select query category
+#### Validations Applied
+- Mobile number regex validation
+- Mandatory field validation
+- Image upload support
 
-Enter heading & description
+📸 *(Attach New Query Form Screenshot Here)*
 
-Upload issue screenshot (image)
+---
 
-Submit query in real time
+## 🧑‍💼 Support Dashboard
 
-Validations Applied
+The Support Dashboard is designed for operational workflow management and analytics.
 
-Mobile number regex validation
+### Tabs Included
+1. **Open Queue**
+2. **My In-Progress**
+3. **Closed Queries**
+4. **Team Analytics**
 
-Mandatory field checks
+---
 
-Image attachment support
+### Query Lifecycle
 
-📸 Screenshot: New Query Form
-
-🧑‍💼 Support Dashboard
-Tabs Included
-
-Open Queue
-
-My In-Progress
-
-Closed Queries
-
-Team Analytics
-
-Query Lifecycle
 Open → In Progress → Closed
 
-
 Support workflow:
+- Pick queries from Open Queue
+- Work on assigned queries
+- Close queries after resolution
 
-Pick query from Open Queue
+📸 *(Attach Support Dashboard Screenshot Here)*
 
-Work on assigned queries
+---
 
-Close queries after resolution
-
-📸 Screenshot: Support Dashboard – Open Queue
-
-Team Analytics
-
+### Team Analytics
 Displays:
+- Queries handled per support agent
+- Average resolution time per agent
+- Support load by category
+- SLA breach identification
 
-Queries handled per support agent
+📸 *(Attach Support Analytics Screenshot Here)*
 
-Average resolution time per agent
+---
 
-Support load by category
+## 📈 Analytics Engine
 
-SLA breach identification
+### Key Metrics
+- Average resolution time
+- Median resolution time
+- Query volume by category
+- Agent workload analytics
+- SLA breach counts
 
-📸 Screenshot: Support Analytics
-
-📈 Analytics Engine
-Key Metrics
-
-Average resolution time
-
-Median resolution time
-
-Query volume by category
-
-Agent workload
-
-SLA breach count
-
-Formula Example
+### Example Formula
 Resolution Time = query_closed_time − query_created_time
 
+Analytics are computed using **Pandas groupby operations and datetime calculations**.
 
-Analytics are computed using Pandas groupby and datetime operations.
+---
 
-🧹 Data Cleaning & Validation
+## 🧹 Data Cleaning & Validation
 
-All cleaning is performed before database insertion and documented in data_cleaning.ipynb.
+All data cleaning is performed before database insertion and documented in `data_cleaning.ipynb`.
 
-Techniques Used
-1️⃣ Email Validation
+### Techniques Used
 
-Regex-based format validation
-
-Invalid emails flagged (not removed)
+#### 1️⃣ Email Validation
+- Regex-based format validation
+- Invalid emails flagged (not deleted)
 
 Valid Email Rate = 5200 / 5200 = 100%
 
-2️⃣ Mobile Number Cleaning
 
-Normalized to last 10 digits
+#### 2️⃣ Mobile Number Cleaning
+- Normalized to last 10 digits
+- Indian mobile regex validation
+- Invalid mobile numbers flagged
 
-Indian mobile regex validation
+#### 3️⃣ Status Normalization
+- Standardized to `Open` and `Closed`
 
-Invalid mobiles flagged
+#### 4️⃣ Date Handling
+- Converted to datetime
+- Resolution time derived
 
-3️⃣ Status Normalization
-
-Standardized to Open / Closed
-
-4️⃣ Date Handling
-
-Converted to datetime
-
-Resolution time derived
-
-5️⃣ Output
-
-Cleaned dataset saved as:
-
+#### 5️⃣ Output
+- Cleaned dataset saved as:
 cleaned_client_queries.csv
 
 
-📸 Screenshot: Data Cleaning Notebook
+📸 *(Attach Data Cleaning Notebook Screenshot Here)*
 
-🗄️ Database Schema
-Tables
+---
 
-users
+## 🗄️ Database Schema
 
-support_agents
+### Tables
+- `users`
+- `support_agents`
+- `client_queries`
+- `client_reviews`
 
-client_queries
+### Relationships
+- Clients submit queries
+- Queries are assigned to support agents
+- Clients provide reviews after query closure
 
-client_reviews
+📸 *(Attach ER Diagram Screenshot Here)*
 
-Relationships
+---
 
-Clients submit queries
+## 📂 Project Structure
 
-Queries assigned to support agents
-
-Clients submit reviews after closure
-
-📸 Screenshot: ER Diagram
-
-📂 Project Structure
 client-query-management-system/
 │
 ├── src/
-│   ├── app.py
-│   ├── client/
-│   ├── support/
-│   ├── analytics/
-│   ├── services/
-│   └── utils/
+│ ├── app.py
+│ ├── client/
+│ ├── support/
+│ ├── analytics/
+│ ├── services/
+│ └── utils/
 │
 ├── notebooks/
-│   └── data_cleaning.ipynb
+│ └── data_cleaning.ipynb
 │
 ├── data/
-│   ├── raw/
-│   └── cleaned/
+│ ├── raw/
+│ └── cleaned/
 │
 ├── assets/
-│   ├── architecture_diagram.png
-│   ├── er_diagram.png
-│   └── miro_exports/
+│ ├── architecture_diagram.png
+│ ├── er_diagram.png
+│ └── miro_exports/
 │
 ├── schema.sql
 ├── schema.py
 ├── requirements.txt
 └── README.md
 
-▶️ How to Run the Project
-1️⃣ Create Database
+
+---
+
+## ▶️ How to Run the Project
+
+### 1️⃣ Create Database Schema
+```bash
 python schema.py
-
-2️⃣ Load Cleaned CSV
+2️⃣ Load Cleaned CSV Data
 python -m src.services.csv_loader
-
-3️⃣ Run Application
+3️⃣ Run Streamlit Application
 streamlit run src/app.py
 
-🧠 Key Learnings
 
-Role-based system design
+## 🚀 Future Enhancements
 
-Secure authentication handling
+- Email / OTP verification
 
-Data validation using regex
+- SLA automation
 
-End-to-end data pipeline
+- Advanced analytics dashboards
 
-Analytics-driven decision making
+- Notification system
 
-Streamlit dashboard design
+## 👤 Author
 
-🎤 Interview-Ready Summary
-
-“This project implements a complete client support management system using Python, MySQL, and Streamlit, with secure authentication, real-time query tracking, and analytics to measure service efficiency and support workload.”
-
-🚀 Future Enhancements
-
-Email / OTP verification
-
-SLA automation
-
-Advanced analytics
-
-Notification system
-
-👤 Author
-
-Bhuvana PS
-Domain: Data Engineering / Analytics / Python
+- Bhuvana PS
+- Website Developer / SEO Specialist / Digital Marketing advisor
+- Domain: Data Engineering / Data Analytics / Python
