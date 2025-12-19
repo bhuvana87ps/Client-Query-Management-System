@@ -247,30 +247,60 @@ cleaned_client_queries.csv
 ```bash
 client-query-management-system/
 │
-├── src/
-│ ├── app.py
-│ ├── client/
-│ ├── support/
-│ ├── analytics/
-│ ├── services/
-│ └── utils/
-│
-├── notebooks/
-│ └── data_cleaning.ipynb
-│
-├── data/
-│ ├── raw/
-│ └── cleaned/
-│
-├── assets/
-│ ├── architecture_diagram.png
-│ ├── er_diagram.png
-│ └── miro_exports/
-│
+├── README.md
+├── requirements.txt
 ├── schema.sql
 ├── schema.py
-├── requirements.txt
-└── README.md
+│
+├── data/
+│   ├── raw/
+│   │   └── synthetic_client_queries.csv
+│   ├── cleaned/
+│   │   └── cleaned_client_queries.csv
+│   └── sample_images/
+│       └── issue_screenshot_example.png
+│
+├── notebooks/
+│   └── data_cleaning.ipynb
+│
+├── src/
+│   ├── app.py
+│   │
+│   ├── services/
+│   │   ├── db_connection.py
+│   │   ├── csv_loader.py
+│   │   └── __init__.py
+│   │
+│   ├── auth/
+│   │   ├── login.py
+│   │   ├── auth_utils.py
+│   │   └── __init__.py
+│   │
+│   ├── client/
+│   │   ├── client_dashboard.py
+│   │   ├── query_form.py
+│   │   └── __init__.py
+│   │
+│   ├── support/
+│   │   ├── support_dashboard.py
+│   │   └── __init__.py
+│   │
+│   ├── analytics/
+│   │   ├── analytics.py
+│   │   └── __init__.py
+│   │
+│   └── utils/
+│       ├── regex_utils.py
+│       ├── date_utils.py
+│       └── __init__.py
+│
+└── assets/
+    ├── architecture_diagram.png
+    ├── er_diagram.png
+    └── miro_exports/
+        ├── cqms_architecture_miro.png
+        └── cqms_mindmap_miro.png
+
 ```
 
 ---
@@ -306,4 +336,5 @@ streamlit run src/app.py
 - Website Developer / SEO Specialist / Digital Marketing advisor
 - Domain: Data Engineering / Data Analytics / Python
 ```
+
 
