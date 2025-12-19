@@ -249,7 +249,8 @@ client-query-management-system/
 │
 ├── README.md
 ├── requirements.txt
-├── schema.sql
+├── data/
+│      └── schema.sql 
 ├── schema.py
 │
 ├── data/
@@ -286,20 +287,13 @@ client-query-management-system/
 │   │   └── __init__.py
 │   │
 │   ├── analytics/
-│   │   ├── analytics.py
+│   │   ├── analytics.pyregex_utils.py
 │   │   └── __init__.py
 │   │
 │   └── utils/
 │       ├── regex_utils.py
 │       ├── date_utils.py
 │       └── __init__.py
-│
-└── assets/
-    ├── architecture_diagram.png
-    ├── er_diagram.png
-    └── miro_exports/
-        ├── cqms_architecture_miro.png
-        └── cqms_mindmap_miro.png
 
 ```
 
@@ -336,5 +330,6 @@ streamlit run src/app.py
 - Website Developer / SEO Specialist / Digital Marketing advisor
 - Domain: Data Engineering / Data Analytics / Python
 ```
+
 
 
