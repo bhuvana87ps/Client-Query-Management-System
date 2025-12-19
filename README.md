@@ -153,9 +153,9 @@ The Support Dashboard is designed for operational workflow management and analyt
 ---
 
 ### Query Lifecycle
-'''
+ 
 Open → In Progress → Closed
-'''
+ 
 Support workflow:
 - Pick queries from Open Queue
 - Work on assigned queries
@@ -244,7 +244,7 @@ cleaned_client_queries.csv
 ---
 
 ## 📂 Project Structure
-
+```bash
 client-query-management-system/
 │
 ├── src/
@@ -271,7 +271,7 @@ client-query-management-system/
 ├── schema.py
 ├── requirements.txt
 └── README.md
-
+```
 
 ---
 
@@ -280,14 +280,18 @@ client-query-management-system/
 ### 1️⃣ Create Database Schema
 ```bash
 python schema.py
+```
 2️⃣ Load Cleaned CSV Data
+```bash
 python -m src.services.csv_loader
+```
 3️⃣ Run Streamlit Application
+```bash
 streamlit run src/app.py
-
+```
 
 ## 🚀 Future Enhancements
-
+```bash
 - Email / OTP verification
 
 - SLA automation
@@ -295,10 +299,11 @@ streamlit run src/app.py
 - Advanced analytics dashboards
 
 - Notification system
-
+```
 ## 👤 Author
-
+```bash
 - Bhuvana PS
 - Website Developer / SEO Specialist / Digital Marketing advisor
 - Domain: Data Engineering / Data Analytics / Python
+```
 
